@@ -6,6 +6,7 @@ test.group('Auth', () => {
     const response = await client.get('/auth/check-db')
 
     response.assertStatus(200)
-    response.assertBodyContains({ message: 'db-ready' })
+    // asert if response is an array
+    response.assertBody([])
   })
 })
