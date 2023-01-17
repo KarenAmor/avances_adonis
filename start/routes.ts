@@ -23,3 +23,4 @@ import Route from '@ioc:Adonis/Core/Route'
 Route.get('/ping', async () => {
   return { message: 'pong' }
 })
+Route.get('/auth/check-db', 'AuthController.checkDb')
