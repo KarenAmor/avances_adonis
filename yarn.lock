@@ -414,10 +414,49 @@
     tslib "^2.2.0"
     uuid "^8.3.0"
 
+"@azure/identity@^3.0.0":
+  version "3.1.3"
+  resolved "https://pkgs.dev.azure.com/CC-GENERAL-Y-OPERACION/_packaging/Capital-Lab/npm/registry/@azure/identity/-/identity-3.1.3.tgz#667a635b305d9d519e5c91cea5ba3390d0d2c198"
+  integrity sha1-ZnpjWzBdnVGeXJHOpbozkNDSwZg=
+  dependencies:
+    "@azure/abort-controller" "^1.0.0"
+    "@azure/core-auth" "^1.3.0"
+    "@azure/core-client" "^1.4.0"
+    "@azure/core-rest-pipeline" "^1.1.0"
+    "@azure/core-tracing" "^1.0.0"
+    "@azure/core-util" "^1.0.0"
+    "@azure/logger" "^1.0.0"
+    "@azure/msal-browser" "^2.32.2"
+    "@azure/msal-common" "^9.0.2"
+    "@azure/msal-node" "^1.14.6"
+    events "^3.0.0"
+    jws "^4.0.0"
+    open "^8.0.0"
+    stoppable "^1.1.0"
+    tslib "^2.2.0"
+    uuid "^8.3.0"
+
 "@azure/keyvault-keys@^4.4.0":
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/@azure/keyvault-keys/-/keyvault-keys-4.6.0.tgz#67c81c211aba28d39cb0cecb79a1f2f707605e84"
   integrity sha512-0112LegxeR03L8J4k+q6HwBVvrpd9y+oInG0FG3NaHXN7YUubVBon/eb5jFI6edGrvNigpxSR0XIsprFXdkzCQ==
+  dependencies:
+    "@azure/abort-controller" "^1.0.0"
+    "@azure/core-auth" "^1.3.0"
+    "@azure/core-client" "^1.5.0"
+    "@azure/core-http-compat" "^1.3.0"
+    "@azure/core-lro" "^2.2.0"
+    "@azure/core-paging" "^1.1.1"
+    "@azure/core-rest-pipeline" "^1.8.0"
+    "@azure/core-tracing" "^1.0.0"
+    "@azure/core-util" "^1.0.0"
+    "@azure/logger" "^1.0.0"
+    tslib "^2.2.0"
+
+"@azure/keyvault-secrets@^4.6.0":
+  version "4.6.0"
+  resolved "https://pkgs.dev.azure.com/CC-GENERAL-Y-OPERACION/_packaging/Capital-Lab/npm/registry/@azure/keyvault-secrets/-/keyvault-secrets-4.6.0.tgz#e8d3c0624402c2c5881edc52e49bcc7a54d40ff3"
+  integrity sha1-6NPAYkQCwsWIHtxS5JvMelTUD/M=
   dependencies:
     "@azure/abort-controller" "^1.0.0"
     "@azure/core-auth" "^1.3.0"
@@ -438,7 +477,7 @@
   dependencies:
     tslib "^2.2.0"
 
-"@azure/msal-browser@^2.26.0":
+"@azure/msal-browser@^2.26.0", "@azure/msal-browser@^2.32.2":
   version "2.32.2"
   resolved "https://registry.yarnpkg.com/@azure/msal-browser/-/msal-browser-2.32.2.tgz#b2284773c95656ed52710e82aedd7fe3e86fa38d"
   integrity sha512-1YqGzXtPG3QrZPFBKaMWr2WQdukDj+PelqUCv351+p+hlw/AhdRrb8haY73/iqkhT6Cdrbnh7sL4gikVsF4O1g==
@@ -455,7 +494,7 @@
   resolved "https://registry.yarnpkg.com/@azure/msal-common/-/msal-common-9.0.2.tgz#b01c0faef18125987682e669494163da06449a20"
   integrity sha512-qzwxuF8kZAp+rNUactMCgJh8fblq9D4lSqrrIxMDzLjgSZtjN32ix7r/HBe8QdOr76II9SVVPcMkX4sPzPfQ7w==
 
-"@azure/msal-node@^1.10.0":
+"@azure/msal-node@^1.10.0", "@azure/msal-node@^1.14.6":
   version "1.14.6"
   resolved "https://registry.yarnpkg.com/@azure/msal-node/-/msal-node-1.14.6.tgz#db1d64249e38afa4831aaed818d17cf48e53c349"
   integrity sha512-em/qqFL5tLMxMPl9vormAs13OgZpmQoJbiQ/GlWr+BA77eCLoL+Ehr5xRHowYo+LFe5b+p+PJVkRvT+mLvOkwA==
@@ -1546,6 +1585,17 @@ capital-case@^1.0.4:
     tslib "^2.0.3"
     upper-case-first "^2.0.2"
 
+capitallab-habilitadores-key-vault@^1.1.4:
+  version "1.1.4"
+  resolved "https://pkgs.dev.azure.com/CC-GENERAL-Y-OPERACION/_packaging/Capital-Lab/npm/registry/capitallab-habilitadores-key-vault/-/capitallab-habilitadores-key-vault-1.1.4.tgz#39fcd501ae121695e4bc95ea0a820931338241e9"
+  integrity sha1-OfzVAa4SFpXkvJXqCoIJMTOCQek=
+  dependencies:
+    "@azure/identity" "^3.0.0"
+    "@azure/keyvault-secrets" "^4.6.0"
+    dotenv "^10.0.0"
+    dotenv-safe "^8.2.0"
+    dotenv-save "^1.2.0"
+
 cardinal@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/cardinal/-/cardinal-2.1.1.tgz#7cc1055d822d212954d07b085dea251cc7bc5505"
@@ -2042,10 +2092,32 @@ dot-case@^3.0.4:
     no-case "^3.0.4"
     tslib "^2.0.3"
 
+dotenv-safe@^8.2.0:
+  version "8.2.0"
+  resolved "https://pkgs.dev.azure.com/CC-GENERAL-Y-OPERACION/_packaging/Capital-Lab/npm/registry/dotenv-safe/-/dotenv-safe-8.2.0.tgz#8d548c7318a62c09a66c4dc8c31864cc007c78ba"
+  integrity sha1-jVSMcximLAmmbE3IwxhkzAB8eLo=
+  dependencies:
+    dotenv "^8.2.0"
+
+dotenv-save@^1.2.0:
+  version "1.2.0"
+  resolved "https://pkgs.dev.azure.com/CC-GENERAL-Y-OPERACION/_packaging/Capital-Lab/npm/registry/dotenv-save/-/dotenv-save-1.2.0.tgz#22fd2251e7c9543c92b9fd682c80fd5fdf574535"
+  integrity sha1-Iv0iUefJVDySuf1oLID9X99XRTU=
+
+dotenv@^10.0.0:
+  version "10.0.0"
+  resolved "https://pkgs.dev.azure.com/CC-GENERAL-Y-OPERACION/_packaging/Capital-Lab/npm/registry/dotenv/-/dotenv-10.0.0.tgz#3d4227b8fb95f81096cdd2b66653fb2c7085ba81"
+  integrity sha1-PUInuPuV+BCWzdK2ZlP7LHCFuoE=
+
 dotenv@^16.0.0:
   version "16.0.3"
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-16.0.3.tgz#115aec42bac5053db3c456db30cc243a5a836a07"
   integrity sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==
+
+dotenv@^8.2.0:
+  version "8.6.0"
+  resolved "https://pkgs.dev.azure.com/CC-GENERAL-Y-OPERACION/_packaging/Capital-Lab/npm/registry/dotenv/-/dotenv-8.6.0.tgz#061af664d19f7f4d8fc6e4ff9b584ce237adcb8b"
+  integrity sha1-Bhr2ZNGff02PxuT/m1hM4jety4s=
 
 ecdsa-sig-formatter@1.0.11:
   version "1.0.11"
