@@ -20,7 +20,10 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 
+/* Check Service Status */
 Route.get('/ping', async () => {
   return { message: 'pong' }
 })
-Route.get('/auth/check-db', 'AuthController.checkDb')
+Route.get('/health/check-db', 'HealthController.checkDb')
+Route.get('/health/check-kv', 'HealthController.checkKv')
+/* end Check Service Status */
