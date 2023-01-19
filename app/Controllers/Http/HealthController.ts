@@ -1,6 +1,6 @@
 // import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Database from '@ioc:Adonis/Lucid/Database'
-const keyVaultClient = require('capitallab-habilitadores-key-vault').getClient();
+const keyVaultClient = require('capitallab-habilitadores-key-vault').getClient()
 
 export default class HealthController {
   public async checkDb() {
