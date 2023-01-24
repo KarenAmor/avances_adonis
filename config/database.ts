@@ -8,8 +8,6 @@
 import Env from '@ioc:Adonis/Core/Env'
 import { DatabaseConfig } from '@ioc:Adonis/Lucid/Database'
 
-console.log(Env.get('MSSQL_PASSWORD'))
-
 const databaseConfig: DatabaseConfig = {
   /*
   |--------------------------------------------------------------------------
