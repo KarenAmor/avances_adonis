@@ -27,3 +27,13 @@ Route.get('/ping', async () => {
 Route.get('/health/check-db', 'HealthController.checkDb')
 Route.get('/health/check-kv', 'HealthController.checkKv')
 /* end Check Service Status */
+
+/* Auth */
+Route.post('/auth/register', 'AuthController.register')
+Route.post('/auth/login', 'AuthController.login')
+/* end Auth */
+
+Route.group(() => {
+  Route.get('/auth/user', 'AuthController.user')
+  Route.post('/auth/logout', 'AuthController.logout')
+}).middleware('auth:api')
