@@ -36,4 +36,8 @@ Route.post('/auth/login', 'AuthController.login')
 Route.group(() => {
   Route.get('/auth/user', 'AuthController.user')
   Route.post('/auth/logout', 'AuthController.logout')
+
+  /*Log System*/
+  Route.resource('log-system', 'LogSystemsController').only(['index', 'show', 'store', 'destroy'])
+/*end Log System*/
 }).middleware('auth:api')
