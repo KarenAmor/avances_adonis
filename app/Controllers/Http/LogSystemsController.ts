@@ -10,7 +10,7 @@ export default class LogSystemsController {
   }
 
   public async store ({ request, response }: HttpContextContract) {
-    const data = request.only(['action', 'endpoint', 'before_data', 'after_data', 'ip', 'user_agent', 'created_at', 'updated_at'])
+    const data = request.only(['action', 'endpoint', 'before_data', 'after_data', 'ip', 'user_agent', 'created_at', 'updated_at', "user_id"])
     const logSystem = await LogSystem.create(data)
     return response.json(logSystem)
   }
