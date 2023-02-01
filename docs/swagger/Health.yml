@@ -1,0 +1,26 @@
+swagger: "2.0"
+info:
+  title: "Health API"
+  version: "1.0.0"
+paths:
+  /db:
+    get:
+      description: Health check for database
+      responses:
+        200:
+          description: Database is healthy
+          schema:
+            type: array
+            items:
+              type: object
+  /kv:
+    get:
+      description: Health check for key vault
+      responses:
+        200:
+          description: Key vault is healthy
+          schema:
+            type: object
+            properties:
+              secret:
+                type: string
