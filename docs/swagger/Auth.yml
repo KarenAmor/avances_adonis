@@ -1,0 +1,83 @@
+swagger: "2.0"
+info:
+  title: "Auth API"
+  version: "1.0.0"
+paths:
+  /register:
+    post:
+      description: Registers a new user
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+                maxLength: 50
+              email:
+                type: string
+                format: email
+                maxLength: 100
+              password:
+                type: string
+                format: password
+                minLength: 8
+                maxLength: 50
+      responses:
+        201:
+          description: User created
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              email:
+                type: string
+                format: email
+  /login:
+    post:
+      description: Logs in a user
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: object
+            properties:
+              email:
+                type: string
+                format: email
+                maxLength: 100
+              password:
+                type: string
+                minLength: 8
+                maxLength: 50
+      responses:
+        200:
+          description: Login successful
+        401:
+          description: Login failed
+  /user:
+    get:
+      description: Returns the current user
+      responses:
+        200:
+          description: User information
+          schema:
+            type: object
+            properties:
+              id:
+                type: integer
+              name:
+                type: string
+              email:
+                type: string
+                format: email
+  /logout:
+    post:
+      description: Logs out the current user
+      responses:
+        200:
+          description: Logout successful

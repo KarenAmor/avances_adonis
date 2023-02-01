@@ -1,0 +1,117 @@
+swagger: '2.0'
+info:
+  title: LogSystem API
+  version: 1.0.0
+paths:
+  /logsystems:
+    get:
+      description: Returns all Log System records
+      responses:
+        200:
+          description: A list of Log System records
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/LogSystem'
+    post:
+      description: Creates a new Log System record
+      parameters:
+        - in: body
+          name: body
+          description: The Log System to be created
+          required: true
+          schema:
+            $ref: '#/definitions/NewLogSystem'
+      responses:
+        201:
+          description: The newly created Log System record
+          schema:
+            $ref: '#/definitions/LogSystem'
+  /logsystems/{id}:
+    get:
+      description: Returns a Log System record by id
+      parameters:
+        - in: path
+          name: id
+          description: The id of the Log System
+          type: integer
+          required: true
+      responses:
+        200:
+          description: A Log System record
+          schema:
+            $ref: '#/definitions/LogSystem'
+    delete:
+      description: Deletes a Log System record by id
+      parameters:
+        - in: path
+          name: id
+          description: The id of the Log System
+          type: integer
+          required: true
+      responses:
+        204:
+          description: The Log System was deleted successfully
+definitions:
+  LogSystem:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: The id of the Log System
+      action:
+        type: string
+        description: The action performed in the Log System
+      endpoint:
+        type: string
+        description: The endpoint in which the action was performed
+      before_data:
+        type: string
+        description: The data before the action was performed
+      after_data:
+        type: string
+        description: The data after the action was performed
+      ip:
+        type: string
+        description: The IP address from where the action was performed
+      user_agent:
+        type: string
+        description: The User Agent from where the action was performed
+      created_at:
+        type: string
+        format: date-time
+        description: The time the Log System record was created
+      updated_at:
+        type: string
+        format: date-time
+        description: The time the Log System record was last updated
+      user_id:
+        type: integer
+        description: The id of the user who performed the action
+  NewLogSystem:
+    type: object
+    properties:
+      action:
+        type: string
+        description: The action performed in the Log System
+        required: true
+      endpoint:
+        type: string
+        description: The endpoint in which the action was performed
+        required: true
+      before_data:
+        type: string
+        description: The data before the action was performed
+        required: true
+      after_data:
+        type: string
+        description: The data after the action was performed
+        required: true
+      ip:
+        type: string
+        description: The IP address from where the action was performed
+        required: true
+      user_agent:
+        type: string
+        description: The user agent from where the action was performed
+        required: true

@@ -1,0 +1,17 @@
+swagger: "2.0"
+info:
+  title: "API Health Check"
+  version: "1.0.0"
+paths:
+  /ping:
+    get:
+      description: Returns server's response used for health check
+      responses:
+        200:
+          description: Success
+          examples:
+            application/json:
+              value:
+                {"response": "Pong"}
+
+
