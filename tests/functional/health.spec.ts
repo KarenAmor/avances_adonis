@@ -24,6 +24,6 @@ test.group('Health', () => {
 
     response.assertStatus(200)
     // asert if response is an array
-    response.assertBodyContains({ value: 'ODSApps' })
+    response.assertBodyContains({ value: 'Backoffice' })
   })
 })

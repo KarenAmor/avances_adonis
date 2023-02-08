@@ -8,6 +8,18 @@
 import Env from '@ioc:Adonis/Core/Env'
 import { DatabaseConfig } from '@ioc:Adonis/Lucid/Database'
 
+const keyVaultClient = require('capitallab-habilitadores-key-vault').getClient()
+
+async function getDbName() {
+  const val = await keyVaultClient.getSecretCustom('BACKOFFICE-DB-NAME')
+  console.log('-------->')
+  console.log(val.value)
+  return val.value
+}
+getDbName()
+console.log('---------- env var ----->')
+console.log(process.env)
+
 const databaseConfig: DatabaseConfig = {
   /*
   |--------------------------------------------------------------------------

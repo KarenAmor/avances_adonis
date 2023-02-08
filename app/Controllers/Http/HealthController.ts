@@ -8,7 +8,7 @@ export default class HealthController {
     return testRecords
   }
   public async checkKv() {
-    const databaseVis = await keyVaultClient.getSecretCustom('DATABASE')
-    return databaseVis
+    const databaseName = await keyVaultClient.getSecretCustom('BACKOFFICE-DB-NAME')
+    return databaseName
   }
 }
