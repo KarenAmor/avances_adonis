@@ -39,6 +39,5 @@ Route.group(() => {
 
   /*Log System*/
   Route.resource('log-system', 'LogSystemsController').only(['index', 'show', 'store', 'destroy'])
-/*end Log System*/
+  /*end Log System*/
 }).middleware('auth:api')
-

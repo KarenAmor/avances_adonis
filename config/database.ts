@@ -5,20 +5,8 @@
  * file.
  */
 
-import Env from '@ioc:Adonis/Core/Env'
+import Application from '@ioc:Adonis/Core/Application'
 import { DatabaseConfig } from '@ioc:Adonis/Lucid/Database'
-
-const keyVaultClient = require('capitallab-habilitadores-key-vault').getClient()
-
-async function getDbName() {
-  const val = await keyVaultClient.getSecretCustom('BACKOFFICE-DB-NAME')
-  console.log('-------->')
-  console.log(val.value)
-  return val.value
-}
-getDbName()
-console.log('---------- env var ----->')
-console.log(process.env)
 
 const databaseConfig: DatabaseConfig = {
   /*
@@ -31,35 +19,34 @@ const databaseConfig: DatabaseConfig = {
   | file.
   |
   */
-  connection: Env.get('DB_CONNECTION'),
+  connection: 'sqlite',
 
   connections: {
     /*
     |--------------------------------------------------------------------------
-    | MSSQL config
+    | SQLite
     |--------------------------------------------------------------------------
     |
-    | Configuration for MSSQL database. Make sure to install the driver
+    | Configuration for the SQLite database.  Make sure to install the driver
     | from npm when using this connection
     |
-    | npm i tedious
+    | npm i sqlite3
     |
     */
-    mssql: {
-      client: 'mssql',
+    sqlite: {
+      client: 'sqlite',
       connection: {
-        user: Env.get('MSSQL_USER'),
-        port: parseInt(Env.get('MSSQL_PORT')),
-        server: Env.get('MSSQL_SERVER'),
-        password: Env.get('MSSQL_PASSWORD'),
-        database: Env.get('MSSQL_DB_NAME'),
-        options: {
-          encrypt: true,
+        filename: Application.tmpPath('db.sqlite3'),
+      },
+      pool: {
+        afterCreate: (conn, cb) => {
+          conn.run('PRAGMA foreign_keys=true', cb)
         },
       },
       migrations: {
         naturalSort: true,
       },
+      useNullAsDefault: true,
       healthCheck: false,
       debug: false,
     },
